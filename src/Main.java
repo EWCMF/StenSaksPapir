@@ -12,6 +12,17 @@ public class Main {
         SSP runde1 = new SSP();
         System.out.println(runde1.slaa(spiller1, spiller2));
 
+
+        // Indlæse spillerns hånd
+        System.out.println("Vælg en hånd.");
+        Scanner scanner = new Scanner(System.in);
+        Haand spillerensHaand = null;
+        String spillerenString = scanner.next();
+        if (spillerenString.equals("sten")) { spillerensHaand = Haand.STEN; }
+        if (spillerenString.equals("saks")) { spillerensHaand = Haand.SAKS; }
+        if (spillerenString.equals("papir")) { spillerensHaand = Haand.PAPIR; }
+        System.out.println("Spiller slår " + spillerensHaand);
+
         // Computer genererer en hånd
         Haand computerensHaand = null;
         int haandInt =(int) (Math.random()*3+1);
@@ -21,14 +32,6 @@ public class Main {
         if (haandInt == 3) { computerensHaand = Haand.PAPIR; }
         System.out.println("Computer slår " + computerensHaand);
 
-        // Indlæse spillerns hånd
-        Scanner scanner = new Scanner(System.in);
-        Haand spillerensHaand = null;
-        String spillerenString = scanner.next();
-        if (spillerenString.equals("sten")) { spillerensHaand = Haand.STEN; }
-        if (spillerenString.equals("saks")) { spillerensHaand = Haand.SAKS; }
-        if (spillerenString.equals("papir")) { spillerensHaand = Haand.PAPIR; }
-        System.out.println("Spiller slår " + spillerensHaand);
 
         // Sammenligne med slaa() metoden
         int resultat = runde1.slaa(computerensHaand, spillerensHaand);

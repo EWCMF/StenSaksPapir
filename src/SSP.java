@@ -79,7 +79,7 @@ public class SSP {
      * Hvis den første hånd vinder, returneres 2
      * Hvis uafgjort, returneres 0
      * Hvis fejl, returneres -1 */
-    int slaa(Haand a, Haand b) {
+    static int slaa(Haand a, Haand b) {
 
         int resultat = -1;
 
